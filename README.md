@@ -1,1 +1,1 @@
-[Play the game](https://v-herzog.github.io/)
+[Test it](https://v-herzog.github.io/)
