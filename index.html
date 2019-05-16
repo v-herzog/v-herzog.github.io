@@ -7,43 +7,36 @@
 </div>
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-		<!-- handle matrix marker -->
+		<a-marker type='barcode' value='0'>
+			<a-entity>
+				<a-obj-model src="objs/0/model.obj" mtl="objs/0/materials.mtl"></a-obj-model>
+			</a-entity>
+		</a-marker>
+
 		<a-marker type='barcode' value='1'>
-			<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
-				<a-torus-knot radius='0.26' radius-tubular='0.05'>
-					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-				</a-torus-knot>
-			</a-box>
+			<a-entity>
+				<a-obj-model src="objs/1/model.obj" mtl="objs/1/materials.mtl"></a-obj-model>
+			</a-entity>
 		</a-marker>
 
-		<!-- handle matrix marker -->
 		<a-marker type='barcode' value='2'>
-			<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
-				<a-torus-knot radius='0.26' radius-tubular='0.05'>
-					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-				</a-torus-knot>
-			</a-box>
+			<a-entity>
+				<a-obj-model src="objs/2/model.obj" mtl="objs/2/materials.mtl"></a-obj-model>
+			</a-entity>
 		</a-marker>
 
-		<!-- handle matrix marker -->
 		<a-marker type='barcode' value='3'>
-			<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
-				<a-torus-knot radius='0.26' radius-tubular='0.05'>
-					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-				</a-torus-knot>
-			</a-box>
+			<a-entity>
+				<a-obj-model src="objs/3/model.obj" mtl="objs/3/materials.mtl"></a-obj-model>
+			</a-entity>
 		</a-marker>
 
-		<!-- handle matrix marker -->
 		<a-marker type='barcode' value='4'>
-			<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
-				<a-torus-knot radius='0.26' radius-tubular='0.05'>
-					<a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-				</a-torus-knot>
-			</a-box>
+			<a-entity>
+				<a-obj-model src="objs/4/model.obj" mtl="objs/4/materials.mtl"></a-obj-model>
+			</a-entity>
 		</a-marker>
 
-		<!-- handle matrix marker -->
 		<a-marker type='barcode' value='5'>
 			<a-entity>
 				<a-obj-model src="objs/5/model.obj" mtl="objs/5/materials.mtl"></a-obj-model>
