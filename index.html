@@ -5,8 +5,19 @@
 <script src="scripts/aframe.min.js"></script>
 <script src="scripts/aframe-ar.js"></script>
 
+<script>
+	AFRAME.registerComponent('log', {
+		schema: {type: 'string'},
+
+		init: function () {
+			var stringToLog = this.data;
+			console.log(stringToLog);
+		}
+	});
+</script>
+
 <body>
-	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' log="scene">
 
 		<a-marker type='barcode' value='0'>
 			<a-entity>
@@ -38,9 +49,9 @@
 			</a-entity>
 		</a-marker>
 
-		<a-marker type='barcode' value='5'>
-			<a-entity>
-				<a-obj-model src="objs/5/model.obj" mtl="objs/5/materials.mtl"></a-obj-model>
+		<a-marker type='barcode' value='5' log="a-marker 5">
+			<a-entity log="a-entity 5">
+				<a-obj-model src="objs/5/model.obj" mtl="objs/5/materials.mtl" log="a-obj 5"></a-obj-model>
 			</a-entity>
 		</a-marker>
 		
