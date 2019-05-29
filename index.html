@@ -4,24 +4,7 @@
 
 <script src="scripts/aframe.min.js"></script>
 <script src="scripts/aframe-ar.js"></script>
-
-<script>
-	markers = [];
-
-	AFRAME.registerComponent('registerevents', {
-		init: function () {
-			var marker = this.el;
-			marker.addEventListener('markerFound', function() {
-				markers.push(marker.id);
-				console.log(markers);
-			});
-			marker.addEventListener('markerLost', function() {
-				markers = markers.filter(item => item !== marker.id)
-				console.log(markers);
-			});
-		}
-	});
-</script>
+<script>src="scripts/events.js"</script>
 
 <body>
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
