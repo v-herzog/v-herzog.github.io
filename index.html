@@ -6,16 +6,19 @@
 <script src="scripts/aframe-ar.js"></script>
 
 <script>
+	markers = [];
+
 	AFRAME.registerComponent('registerevents', {
 		init: function () {
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
-				//var markerId = marker.id;
-				console.log('markerFound');
+				console.log('markerFound', marker.value);
+				markers.push(marker.value);
+				console.log(markers);
 			});
 			marker.addEventListener('markerLost', function() {
-				//var markerId = marker.id;
-				console.log('markerLost');
+				console.log('markerLost', marker.value);
+				markers.pop(marker.value);
 			});
 		}
 	});
