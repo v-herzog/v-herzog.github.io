@@ -12,13 +12,12 @@
 		init: function () {
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
-				console.log('markerFound', marker.value);
-				markers.push(marker.value);
+				markers.push(marker.id);
 				console.log(markers);
 			});
 			marker.addEventListener('markerLost', function() {
-				console.log('markerLost', marker.value);
-				markers.pop(marker.value);
+				markers = markers.filter(item => item !== marker.id)
+				console.log(markers);
 			});
 		}
 	});
@@ -27,37 +26,37 @@
 <body>
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-		<a-marker type='barcode' value='0' registerevents>
+		<a-marker type='barcode' value='0' id='0' registerevents>
 			<a-entity>
 				<a-obj-model src="objs/0/model.obj" mtl="objs/0/materials.mtl"></a-obj-model>
 			</a-entity>
 		</a-marker>
 
-		<a-marker type='barcode' value='1' registerevents>
+		<a-marker type='barcode' value='1' id='1' registerevents>
 			<a-entity>
 				<a-obj-model src="objs/1/model.obj" mtl="objs/1/materials.mtl"></a-obj-model>
 			</a-entity>
 		</a-marker>
 
-		<a-marker type='barcode' value='2' registerevents>
+		<a-marker type='barcode' value='2' id='2' registerevents>
 			<a-entity>
 				<a-obj-model src="objs/2/model.obj" mtl="objs/2/materials.mtl"></a-obj-model>
 			</a-entity>
 		</a-marker>
 
-		<a-marker type='barcode' value='3' registerevents>
+		<a-marker type='barcode' value='3' id='3' registerevents>
 			<a-entity>
 				<a-obj-model src="objs/3/model.obj" mtl="objs/3/materials.mtl"></a-obj-model>
 			</a-entity>
 		</a-marker>
 
-		<a-marker type='barcode' value='4' registerevents>
+		<a-marker type='barcode' value='4' id='4' registerevents>
 			<a-entity>
 				<a-obj-model src="objs/4/model.obj" mtl="objs/4/materials.mtl"></a-obj-model>
 			</a-entity>
 		</a-marker>
 
-		<a-marker type='barcode' value='5' registerevents>
+		<a-marker type='barcode' value='5' id='5' registerevents>
 			<a-entity>
 				<a-obj-model src="objs/5/model.obj" mtl="objs/5/materials.mtl"></a-obj-model>
 			</a-entity>
