@@ -1,12 +1,10 @@
 markers = [];
 
-// Events for the communication with the parent window
+// Send message to the parent window
 var sendMessage = function (msg) {
-    window.parent.postMessage(msg, '*');
+    console.log(msg.toString());
+    window.parent.postMessage(msg.toString(), '*');
 };
-bindEvent(window, 'message', function (e) {
-    console.log(e.data);
-});
 
 // Events for the markers detected in the screen
 AFRAME.registerComponent('registerevents', {
@@ -14,13 +12,11 @@ AFRAME.registerComponent('registerevents', {
         var marker = this.el;
         marker.addEventListener('markerFound', function() {
             markers.push(marker.id);
-            console.log(markers);
-            sendMessage('hello from iframe');
+            sendMessage(markers);
         });
         marker.addEventListener('markerLost', function() {
             markers = markers.filter(item => item !== marker.id)
-            console.log(markers);
-            sendMessage('hello from iframe');
+            sendMessage(markers);
         });
     }
 });
