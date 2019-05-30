@@ -12,13 +12,11 @@ AFRAME.registerComponent('registerevents', {
         var marker = this.el;
         marker.addEventListener('markerFound', function() {
             markers.push(marker.id);
-            //sendMessage(markers);
-            console.log('markerFound');
+            sendMessage(markers);
         });
         marker.addEventListener('markerLost', function() {
             markers = markers.filter(item => item !== marker.id)
-            //sendMessage(markers);
-            console.log('markerLost');
+            sendMessage(markers);
         });
     }
 });
