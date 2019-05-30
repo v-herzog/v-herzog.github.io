@@ -2,7 +2,6 @@ markers = [];
 
 // Send message to the parent window
 var sendMessage = function (msg) {
-    console.log(JSON.stringify(msg));
     window.parent.postMessage(JSON.stringify(msg), '*');
 };
 
